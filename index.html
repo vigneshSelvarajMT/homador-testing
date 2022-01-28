@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html>
-    <body>
-        <script type="text/javascript">
-            window.onload = function() {
-                // Deep link to your app goes here
-                document.getElementById("l").src = "openHomador://";
-
-                setTimeout(function() {
-                    // Link to the App Store should go here -- only fires if deep link fails                
-                    window.location = "https://itunes.apple.com/us/app/my.app/id123456789?ls=1&mt=8";
-                }, 1000);
-            };
-        </script>
-        <iframe id="l" width="1" height="1" style="visibility:hidden"></iframe>
-    </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+<body>
+<script>
+      (function () {
+        setTimeout(function () { window.location = "https://itunes.apple.com/us/app/my.app/id123456789?ls=1&mt=8"; }, 1000);
+    window.location = " openHomador:// ";
+      })();
+    </script>
+</body>
 </html>
