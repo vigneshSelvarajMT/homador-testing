@@ -10,13 +10,20 @@
     <script>
       (function () {
         //   append iframe on body
-        var body = document.dody;
+        /*var body = document.dody;
         var iframe = document.createElement('iframe');
         iframe.src = 'openHomador://';
         iframe.style.display = 'none';
         body.appendChild(iframe);
         iframe.src = 'https://itunes.apple.com/gb/app/pinterest/id429047995';
-        body.appendChild(iframe);
+        body.appendChild(iframe);*/
+        // Deep link to your app goes here
+                document.getElementById("l").src = "openHomador://";
+
+                setTimeout(function() {
+                    // Link to the App Store should go here -- only fires if deep link fails                
+                    window.location = "https://itunes.apple.com/gb/app/pinterest/id429047995";
+                }, 1000);
       })();
     </script>
   </body>
