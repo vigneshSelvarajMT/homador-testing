@@ -11,13 +11,16 @@
     <script>
       (function () {
         //   append iframe on body
-        var body = document.dody;
+        /*var body = document.dody;
         var iframe = document.createElement('iframe');
         iframe.src = 'openHomador://share?abc=12&xyz=123';
         iframe.style.display = 'none';
         body.appendChild(iframe);
         iframe.src = 'https://itunes.apple.com/gb/app/pinterest/id429047995?mt=8';
-        setTimeout(()=>body.appendChild(iframe), 2000);
+        setTimeout(()=>body.appendChild(iframe), 2000);*/
+        window.location.replace('openHomador://');
+
+        setTimeout("window.location = 'https://itunes.apple.com/gb/app/pinterest/id429047995?mt=8';", 1000); 
       })();
     </script>
   </body>
