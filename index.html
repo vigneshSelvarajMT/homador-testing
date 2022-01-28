@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -9,18 +10,14 @@
   <body>
     <script>
       (function () {
-        var app = {
-          launchApp: function () {
-            window.open("openHomador://");
-            this.timer = setTimeout(this.openWebApp, 1000);
-          },
-
-          openWebApp: function () {
-            window.location.replace("https://itunes.apple.com/gb/app/pinterest/id429047995?mt=8");
-          },
-        };
-
-        app.launchApp();
+        //   append iframe on body
+        var body = document.dody;
+        var iframe = document.createElement('iframe');
+        iframe.src = 'openHomador://share?abc=12&xyz=123';
+        iframe.style.display = 'none';
+        body.appendChild(iframe);
+        iframe.src = 'https://itunes.apple.com/gb/app/pinterest/id429047995?mt=8';
+        body.appendChild(iframe);
       })();
     </script>
   </body>
