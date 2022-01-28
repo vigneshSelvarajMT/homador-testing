@@ -1,17 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-<script>
+  </head>
+  <body>
+    <script>
       (function () {
-        setTimeout(function () { window.location = "https://itunes.apple.com/us/app/my.app/id123456789?ls=1&mt=8"; }, 1000);
-    window.location = " openHomador:// ";
+        //   append iframe on body
+        var body = document.dody;
+        var iframe = document.createElement('iframe');
+        iframe.src = 'openHomador://';
+        iframe.style.display = 'none';
+        body.appendChild(iframe);
+        iframe.src = 'https://itunes.apple.com/gb/app/pinterest/id429047995';
+        body.appendChild(iframe);
       })();
     </script>
-</body>
+  </body>
 </html>
