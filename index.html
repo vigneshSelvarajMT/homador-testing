@@ -1,23 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
+<html>
+    <head>
+    <title>iOS Automatic Deep Linking</title>
+    <script src='//code.jquery.com/jquery-1.11.2.min.js'></script>
+    <script src='//mobileesp.googlecode.com/svn/JavaScript/mdetect.js'></script>
     <script>
-      (function () {
-        //   append iframe on body
-        var body = document.dody;
-        var iframe = document.createElement('iframe');
-        iframe.src = 'openHomador://';
-        iframe.style.display = 'none';
-        body.appendChild(iframe);
-        iframe.src = 'https://itunes.apple.com/gb/app/pinterest/id429047995';
-        body.appendChild(iframe);
-      })();
+      (function ($, MobileEsp) {
+        // On document ready, redirect to the App on the App store.
+        $(function () {
+          if (typeof MobileEsp.DetectIos !== 'undefined' && MobileEsp.DetectIos()) {
+            // Add an iframe to twitter://, and then an iframe for the app store
+            // link. If the first fails to redirect to the Twitter app, the
+            // second will redirect to the app on the App Store. We use jQuery
+            // to add this after the document is fully loaded, so if the user
+            // comes back to the browser, they see the content they expect.
+            $('body').append('<iframe class="twitter-detect" src="openHomador://" />')
+              .append('<iframe class="twitter-detect" src="itms-apps://itunes.com/apps/twitter" />');
+          }
+        });
+      })(jQuery, MobileEsp);
     </script>
-  </body>
+    <style type="text/css">
+      .twitter-detect {
+        display: none;
+      }
+    </style>
+    </head>
+    <body>
+    <p>Website content.</p>
+    </body>
 </html>
