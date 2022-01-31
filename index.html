@@ -8,23 +8,21 @@
   </head>
   <body>
     <script>
-      (function() {
-  var app = {
-    launchApp: function() {
-      window.location.replace("openHomador://");
-      this.timer = setTimeout(this.openWebApp, 1000);
-    },
-
-    openWebApp: function() {
-      if (window.isActive) {
-      window.location.replace("https://itunes.apple.com/gb/app/pinterest/id429047995");
-      }
+      (function () {
+        //   append iframe on body
+        var body = document.dody;
+        var iframe = document.createElement('iframe');
+        iframe.onload = function() {
+        try {
+          console.log('loaded')
+        } catch (e) {
+            window.location.href='https://itunes.apple.com/gb/app/pinterest/id429047995'
+        }
     }
-  };
-
-  app.launchApp();
-})();
-
+        iframe.src = 'openHomador://';
+        iframe.style.display = 'none';
+        body.appendChild(iframe);
+      })();
     </script>
   </body>
 </html>
