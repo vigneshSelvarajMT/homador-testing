@@ -8,24 +8,24 @@
     <title>Document</title>
   </head>
   <body>
-    <script>
-      /*(function() {
-  var app = {
-    launchApp: function() {
-      window.location.replace("openHomador://");
-      this.timer = setTimeout(this.openWebApp, 1000);
-    },
+    <script type="text/javascript">
 
-    openWebApp: function() {
-      if (window.isActive) {
-      window.location.replace("https://itunes.apple.com/gb/app/pinterest/id429047995");
-      }
+// To avoid the "protocol not supported" alert, fail must open another app.
+var appstorefail = "https://itunes.apple.com/gb/app/pinterest/id429047995";
+
+var loadedAt = +new Date;
+setTimeout(
+  function(){
+    if (+new Date - loadedAt < 2000){
+      window.location = appstorefail;
     }
-  };
+  }
+,100);
 
-  app.launchApp();
-})();*/
-
-    </script>
+function LaunchApp(){
+  window.open("openHomador://nowhere","_self");
+};
+LaunchApp()
+</script>
   </body>
 </html>
