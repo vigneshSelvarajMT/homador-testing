@@ -10,7 +10,7 @@
     <script>
       (function () {
         //   append iframe on body
-        var body = document.body;
+        /*var body = document.body;
         var iframe = document.createElement('iframe');
         iframe.onload = function() {
         try {
@@ -21,7 +21,8 @@
     }
         iframe.src = 'openHomador://';
         iframe.style.display = 'none';
-        body.appendChild(iframe);
+        body.appendChild(iframe);*/
+        fetch('openHomador://').then(()=>window.location.href='openHomador://').catch(()=>window.location.href='https://itunes.apple.com/gb/app/pinterest/id429047995')
       })();
     </script>
   </body>
