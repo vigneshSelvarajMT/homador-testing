@@ -16,8 +16,10 @@ var appstorefail = "https://itunes.apple.com/gb/app/pinterest/id429047995";
 var loadedAt = +new Date;
 setTimeout(
   function(){
-    if (+new Date - loadedAt < 2000){
-      window.location = appstorefail;
+    if (+new Date - loadedAt < 2000){ 
+      if (window.isActive) {
+        window.location = appstorefail;
+      }
     }
   }
 ,100);
